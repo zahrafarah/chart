@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>African Americans' relationship with music</title>
+<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+<style>
+body {
+font-family: Geneva;
+font-size: 16px;
+background:LightGray;	
+}
+
+#main
+{
+border-top: 6px dotted black;
+border-bottom: 6px dotted black;
+overflow: auto;
+padding: 10px;
+margin-top: 10px;
+
+}
+.bars {
+background-color: orange;
+width: 300px;
+height: 25px;
+margin: 13px 0 0 0;
+-webkit-transition:width 1s ease-in;
+-moz-transition:width 1s ease-in;
+-o-transition:width 1s ease-in;
+transition:width 1s ease-in;
+}
+#bar0 {
+width: 1000px;
+}
+#bar1 {
+width: 1000px;
+}
+#bar2 {
+width: 1000px;
+}
+#bar3 {
+width: 1000px;
+}
+.number {
+color: black;
+text-align: right;
+padding: 3px;
+font-size: 12px; 
+}
+.tooltip {
+    display:none;
+    background: white;
+    font-size:14px;
+    height:25px;
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: black;
+    border: 1px solid black; 
+  }
+</style>
+</head>
+<body>
+<h1><FONT COLOR="orange">AFRICAN AMERICAN CONSUMERS AND MUSIC</FONT></h1>
+
+<b>For centuries, </b> music has played a central role in the African America experience. Black musical traditions have evolved over time into such quintessentially American music as gospel and the blues to jazz and hip-hop. 
+<br>
+</br>
+While the influence and artistic works of African Americans have shaped the vast musical landscaped enjoyed today, music for most African Americans continues to have a powerful social significance, according to the Nielsen Diverse Intelligence Series. 
+<h3>"Totaling 44 million people and growing, the African American community represents a significant audience for the music industry blacks make up 14 percent of the total U.S. population and are proportionally younger than the res of America. More than half of the black population, 54 percent, is under the age of 35," the study says.</h3> 
+
+This chart shows what kinds of genres have gotten the most streams, album and single downloads and shows the different musical preferences of this population.
+ <h2>2010</h2>
+Hip Hop was one of the top genres this year. According to the study there was more than 530 million streaming through music or transistor radios or stereo systems using the Internet and mobile devices.
+<br>
+</br>
+Some of the most popular Hip Hop song of that year was <a href="http://www.youtube.com/watch?v=9RUSRxTpI80/">Deuces Chris Brown ft. Tyga and Kevin McCall.</a>
+<br>
+</br>
+<object width="560" height="315"><param name="movie" value="//www.youtube.com/v/9RUSRxTpI80?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube.com/v/9RUSRxTpI80?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+</br>
+<h2>2011</h2>
+The most popular genres were RnB and Hip Hop. Here is a list from the <a href="http://www.billboard.com/archive/charts/2011/r-b-hip-hop-songs"><img class="alignnone size-full wp-image-25" src="billboard.jpeg" alt="billboard" width="270" height="72" /></a> .</p>
+<h2> 2012-2013</h2>
+In <a href="http://www.billboard.com/charts/gospel-songs2012">2012 and in 2013</a> downloads in Gospel increased in about a million more downloads. Hmm I wonder why?  
+<br>
+</br>
+"A younger audience, African Americans have an influence on music that is outsize to their share of the overall population; and as early adopters of technology, this group has the power to inspire musical trends," according to Nielsen Diverse Intelligence Series. 
+<br>
+</br>
+<form name="form1">
+<select name="sel" onChange="selMeasure()">
+  <option value="twentyten">2010</option>
+  <option value="twentyeleven">2011</option>  
+  <option value="twentytwelve">2012</option>  
+  <option value="twentythirteen">2013</option> 
+</select>
+</form>
+<div id="main">
+<div id="cat"></div>
+<div id="bar0" class="bars"><p id="bartext0" class="number"></p>
+</div>
+<div id="name0"></div>
+<div id="bar1" class="bars"><p id="bartext1"class="number"></p>
+</div>
+<div id="name1"></div>
+<div id="bar2" class="bars"><p id="bartext2"class="number"></p>
+</div>
+<div id="name2"></div>
+<div id="bar3" class="bars"><p id="bartext3"class="number"></p>
+</div>
+<div id="name3"></div>
+</div>
+<script>
+var genres = [ 
+{name: "RnB", twentyten: 328, twentyeleven: 339, twentytwelve: 457, twentythirteen: 503, tip: "Jamie Foxx ft. T-Pain - Blame It"},
+{name: "Hip Hop", twentyten: 536, twentyeleven: 421, twentytwelve: 543, twentythirteen: 576, tip: "Snoop Dog ft. Pharrell - Drop It  Like's It Hot" },
+{name: "Gospel", twentyten: 139, twentyeleven: 213, twentytwelve: 267, twentythirteen: 318, tip: "Lecrae - All I Need Is You"},
+{name: "Soft Jazz", twentyten: 86, twentyeleven: 96, twentytwelve: 102, twentythirteen: 144, tip: "Jazz Funk Soul - Serious Business"},
+];
+
+document.getElementById("cat").innerHTML = "<strong>" + "twentyten" + "</strong>";
+for (var i = 0; i<genres.length; i++) {
+document.getElementById("name" + i).innerHTML= genres[i].name;
+document.getElementById("bartext" + i).innerHTML= genres[i].twentyten;
+document.getElementById("bar" + i).style.width = genres[i].twentyten + "px";
+document.getElementById("bar" + i).title= genres[i].tip;
+}; 
+function selMeasure() {
+var m = document.form1.sel.value;
+if (m == "twentyten")
+{
+document.getElementById("cat").innerHTML = "<strong>" + "2010" + "</strong>";
+for (var i = 0; i<genres.length; i++) {
+    document.getElementById("bartext" + i).innerHTML= genres[i].twentyten;
+    document.getElementById("bar" + i).style.width = genres[i].twentyten + "px";
+	document.getElementById("bar" + i).title= genres[i].tip;
+    
+    }; 
+} // end if
+else if (m ==  "twentyeleven") {
+document.getElementById("cat").innerHTML = "<strong>" + "2011" + "</strong>";
+     
+for (var i = 0; i<genres.length; i++) {
+    document.getElementById("bartext" + i).innerHTML= genres[i].twentyeleven;
+    document.getElementById("bar" + i).style.width = genres[i].twentyeleven + "px";
+	document.getElementById("bar" + i).title= genres[i].tip;
+    
+    };
+} // end else if
+else if (m ==  "twentytwelve") {
+document.getElementById("cat").innerHTML = "<strong>" + "2012" + "</strong>";
+for (var i = 0; i<genres.length; i++) {
+    document.getElementById("bartext" + i).innerHTML= genres[i].twentytwelve;
+    document.getElementById("bar" + i).style.width = genres[i].twentytwelve + "px";
+	document.getElementById("bar" + i).title= genres[i].tip;
+ };
+} // end else if
+else if (m ==  "twentythirteen") {
+document.getElementById("cat").innerHTML = "<strong>" + "2013" + "</strong>";
+for (var i = 0; i<genres.length; i++) {
+    document.getElementById("bartext" + i).innerHTML= genres[i].twentythirteen;
+    document.getElementById("bar" + i).style.width = genres[i].twentythirteen + "px";
+	document.getElementById("bar" + i).title= genres[i].tip;
+    
+    
+    };
+	
+	
+} // end else if
+} // end function selMeasure
+
+$( document ).ready(function() {
+   $("[title]").tooltip({offset: [5, 60]});
+    });
+    
+</script>
+Key: Numbers are in millions.
+	 When you drag the mouse over a bar a popular song from the past decade is displayed.  
+ Information for the chart comes from <a href="http://www.billboard.com/">Billboard</a> and 
+<a href="http://www.nielsen.com/us/en/insights/reports/2014/listen-up-african-american-consumers-and-music.html/">Nielsen: African American reports</a>.
+</body>
+</html>
